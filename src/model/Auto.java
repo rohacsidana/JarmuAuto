@@ -17,7 +17,7 @@ public class Auto extends Jarmu {
         if (defektesLesz == 4) {
             this.defekt = true;
         }
-        return true;
+        return !this.defekt ? true : false;
     }
 
 }

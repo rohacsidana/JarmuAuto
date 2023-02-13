@@ -2,12 +2,12 @@ package model;
 
 public abstract class Jarmu {
 
-    private boolean beinditva, uzemanyag, megekerkezett;
+    private boolean beinditva, uzemanyag, megerkezett;
 
     public Jarmu() {
         this.uzemanyag = true;
         this.beinditva = false;
-        this.megekerkezett = false;
+        this.megerkezett = false;
     }
 
     public void beindit() {
@@ -27,10 +27,10 @@ public abstract class Jarmu {
     }
 
     public boolean halad() {
-        this.megekerkezett = true;
+        this.megerkezett = true;
         this.uzemanyag = false;
         this.leallit();
 
-        return true;
+        return this.megerkezett ? true : false;
     }
 }
