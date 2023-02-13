@@ -10,6 +10,10 @@ public abstract class Jarmu {
         this.megerkezett = false;
     }
 
+    public boolean isBeinditva() {
+        return beinditva;
+    }
+
     public void beindit() {
         this.beinditva = true;
     }
@@ -19,18 +23,18 @@ public abstract class Jarmu {
     }
 
     public boolean tankol() {
-        if (this.beinditva) {
-            this.leallit();
-        }
-        this.uzemanyag = true;
-        return true;
+        if (!this.isBeinditva()) {
+            this.uzemanyag = true;
+        }       
+        return this.uzemanyag ? true : false;
     }
 
     public boolean halad() {
-        this.megerkezett = true;
-        this.uzemanyag = false;
-        this.leallit();
-
+        if (this.isBeinditva()) {
+            this.megerkezett = true;
+            this.uzemanyag = false;
+            this.leallit();
+        }        
         return this.megerkezett ? true : false;
     }
 }

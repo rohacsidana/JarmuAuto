@@ -4,20 +4,30 @@ import java.util.Random;
 
 public class Auto extends Jarmu {
 
-    private boolean defekt;
+    private boolean defektes;
+
+    public Auto() {
+        this.defektes = false;
+    }
 
     public void kereketCserel() {
-        this.defekt = false;
+        this.defektes = false;
+    }
+
+    public boolean isDefektes() {
+        return defektes;
     }
 
     @Override
     public boolean halad() {
-        Random rnd = new Random();
-        int defektesLesz = rnd.nextInt(4 - 1) + 1;
-        if (defektesLesz == 4) {
-            this.defekt = true;
+        if (this.isBeinditva()) {
+            Random rnd = new Random();
+            int defektesLesz = rnd.nextInt(4 - 1) + 1;
+            if (defektesLesz == 1) {
+                this.defektes = true;
+            }
         }
-        return !this.defekt ? true : false;
+        return this.defektes;
     }
 
 }
