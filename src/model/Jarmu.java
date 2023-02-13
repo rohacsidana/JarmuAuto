@@ -27,11 +27,10 @@ public abstract class Jarmu {
     }
 
     public boolean halad() {
-        //érkezzen meg?
-        if (this.megekerkezett) {
-            this.uzemanyag = false;
-            this.leallit();
-        }
+        this.megekerkezett = true;
+        this.uzemanyag = false;
+        this.leallit();
+
         return true;
     }
 }

@@ -16,7 +16,6 @@ public class Auto extends Jarmu {
         int defektesLesz = rnd.nextInt(4 - 1) + 1;
         if (defektesLesz == 4) {
             this.defekt = true;
-            this.kereketCserel(); // mindenképp cseréljünk?
         }
         return true;
     }
